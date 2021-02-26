@@ -32,7 +32,7 @@ export default {
    head () {
      // Process to deply project at github pages.
      // https://nuxtjs.org/docs/2.x/deployment/github-pages/
-     return this.$metaDataWrapper.wrapMetaData('Testing Param Title-1', `Testing Description-1`)
+     return this.$metaDataWrapper.wrapMetaData('Testing Param Title-1', `Testing Description-1`, this.$route.path)
      ///return this.greet('Testing Param Title', `Testing Description - 1`)    
   },
   methods: {
