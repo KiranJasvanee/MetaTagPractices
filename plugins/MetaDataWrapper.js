@@ -15,7 +15,12 @@ const metaDataWrapper = {
           hid: `twitter:description`,
           name: "twitter:description",
           content: metaDesc
-        }
+        },
+        {
+          hid: `og:title`,
+          name: "og:title",
+          content: metaDesc
+        },
       ]
     };
   }
