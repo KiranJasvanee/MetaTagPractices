@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        nuxt-blog-seo
-      </h1>
+      <h1 class="title">nuxt-blog-seo</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -29,15 +27,23 @@
 
 <script>
 export default {
-   head () {
-     // Process to deply project at github pages.
-     // https://nuxtjs.org/docs/2.x/deployment/github-pages/
-     return this.$metaDataWrapper.wrapMetaData('Testing Param Title-1', `Testing Description-1`, this.$route.path)
-     ///return this.greet('Testing Param Title', `Testing Description - 1`)    
+  head() {
+    // Process to deply project at github pages.
+    // https://nuxtjs.org/docs/2.x/deployment/github-pages/
+    return this.$metaDataWrapper.wrapMetaData(
+      "Testing Param Title-1",
+      `Testing Description-1`,
+      this.$route.fullPath,
+      "https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+    );
+    ///return this.greet('Testing Param Title', `Testing Description - 1`)
+  },
+  created() {
+    console.log("created: " + this.$route.fullPath);
   },
   methods: {
     // greet: function (metaTitle, metaDesc) {
-    //   // `this` inside methods point to the Vue instance 
+    //   // `this` inside methods point to the Vue instance
     //   return {
     //     title: metaTitle,
     //     meta: [{
@@ -48,10 +54,9 @@ export default {
     //     ],
     //   }
     //   // console.log('Got the thing. ' + metaTitle)
-      
     // }
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -65,16 +70,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
